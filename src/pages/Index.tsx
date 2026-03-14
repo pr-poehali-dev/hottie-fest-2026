@@ -315,6 +315,7 @@ export default function Index() {
               { icon: "TrendingUp", title: "Перевод в PRO", text: "Если во время выступления команды в уровне начинающих судьи решат, что команда имеет хорошую технику и сильный номер, организаторы вправе перевести такую команду в уровень PRO." },
               { icon: "RefreshCcw", title: "Объединение номинаций", text: "Организаторы оставляют за собой право вносить изменения в номинации. Если номинация не набирается (от 5 заявок), её объединяют с другой номинацией." },
               { icon: "Type", title: "Название команды", text: "Название команды не может содержать ненормативную лексику, быть грубым или обидным. Организаторы вправе потребовать сменить недопустимое название." },
+              { icon: "ShieldAlert", title: "Возрастное ограничение 16+", text: "Чемпионат предназначен для участников от 16 лет. Участники младше 16 лет обязаны предоставить письменное согласие родителей или законных представителей. Форму согласия необходимо запросить у организаторов." },
             ].map((item, i) => (
               <div key={i} className="card-hover p-6" style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-4" style={{ background: "rgba(232,21,27,0.12)", color: "var(--red)" }}>
@@ -597,6 +598,8 @@ export default function Index() {
               { icon: "Send", label: "Telegram", value: "@yuliabooka", sub: "Юлия", href: "https://t.me/yuliabooka" },
               { icon: "Mail", label: "Почта", value: "hottiefest@mail.ru", sub: "Музыка и вопросы", href: "mailto:hottiefest@mail.ru" },
               { icon: "MapPin", label: "Место проведения", value: "РК BABYLON", sub: "ул. Профсоюзов, 55, Сургут", href: "#" },
+              { icon: "Send", label: "Telegram-канал", value: "@herachdetka", sub: "Канал феста", href: "https://t.me/herachdetka" },
+              { icon: "Globe", label: "ВКонтакте", value: "vk.com/hottiefest", sub: "Страница феста", href: "https://vk.com/hottiefest" },
             ].map((c, i) => (
               <a key={i} href={c.href} className="card-hover p-6 block" style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-4" style={{ background: "rgba(232,21,27,0.1)", color: "var(--red)" }}>
