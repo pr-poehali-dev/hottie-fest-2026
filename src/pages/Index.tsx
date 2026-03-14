@@ -517,7 +517,12 @@ export default function Index() {
                 />
               </div>
 
-              <button type="submit" className="btn-red w-full py-4 text-sm font-semibold tracking-widest" style={{ borderRadius: "2px" }}>
+              <button
+                type="submit"
+                className="btn-red w-full py-4 text-sm font-semibold tracking-widest"
+                style={{ borderRadius: "2px" }}
+                onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd15tsg4PDLzwmAMELevZQkFgS-tGo3NgHutRNOt50_PwM4tA/viewform?usp=dialog", "_blank")}
+              >
                 Отправить заявку
               </button>
               <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.3)" }}>
