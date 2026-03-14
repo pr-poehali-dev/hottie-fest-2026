@@ -20,7 +20,6 @@ const SHOW_NOMINATIONS = [
     level: "Продвинутый",
     levelColor: "#e8151b",
     desc: "Номинация включает в себя все женские стили на каблуках: frame up, стрип, high heels. Pro — танцоры, которые занимаются на постоянной основе; опытные танцоры, имеющие хорошую технику исполнения; сложная постановка номера.",
-    price: 1500,
   },
   {
     id: "ladies-beg",
@@ -29,7 +28,6 @@ const SHOW_NOMINATIONS = [
     level: "Начинающий",
     levelColor: "#888",
     desc: "Номинация включает в себя все женские стили на каблуках: frame up, стрип, high heels. Хореограф не участвует в номере. Beginners — начинающие танцоры, имеющие маленький танцевальный опыт. Лёгкая постановка.",
-    price: 1500,
   },
   {
     id: "best-show",
@@ -37,9 +35,11 @@ const SHOW_NOMINATIONS = [
     title: "Best Dance Show",
     level: "Любой",
     levelColor: "#888",
-    desc: "Номинация включает в себя любые стили, но команда выступает без каблуков. Команда от 3 человек. Длительность 3–4 минуты. Разрешён реквизит по согласованию с организаторами.",
-    price: 1500,
+    desc: "Номинация включает в себя любые стили, но команда выступает без каблуков.",
   },
+];
+
+const DUET_NOMINATIONS = [
   {
     id: "duet",
     tag: "DUET",
@@ -47,7 +47,6 @@ const SHOW_NOMINATIONS = [
     level: "Любой",
     levelColor: "#888",
     desc: "Номинация для дуэтных исполнителей любого стиля танца.",
-    price: 1500,
   },
 ];
 
@@ -59,7 +58,6 @@ const SOLO_NOMINATIONS = [
     level: "Продвинутый",
     levelColor: "#e8151b",
     desc: "Номинация для сольных исполнителей продвинутого уровня. Лимит — 20 участников.",
-    price: 2000,
     limit: "Лимит: 20 участников",
   },
   {
@@ -69,7 +67,6 @@ const SOLO_NOMINATIONS = [
     level: "Начинающий",
     levelColor: "#888",
     desc: "Номинация для сольных исполнителей категории начинающие. Исключает участие действующих педагогов, а также танцоров продвинутого уровня. Лимит — 20 участников.",
-    price: 2000,
     limit: "Лимит: 20 участников",
   },
   {
@@ -79,12 +76,11 @@ const SOLO_NOMINATIONS = [
     level: "Мужчины",
     levelColor: "#888",
     desc: "Номинация для сольных исполнителей мужского пола. Лимит — 20 участников.",
-    price: 2000,
     limit: "Лимит: 20 участников",
   },
 ];
 
-const ALL_NOM_IDS = [...SHOW_NOMINATIONS, ...SOLO_NOMINATIONS].map((n) => n.id);
+const ALL_NOM_IDS = [...SHOW_NOMINATIONS, ...DUET_NOMINATIONS, ...SOLO_NOMINATIONS].map((n) => n.id);
 const SOLO_IDS = SOLO_NOMINATIONS.map((n) => n.id);
 
 function calcFee(selected: string[]): number {
@@ -324,11 +320,25 @@ export default function Index() {
         <div className="max-w-5xl mx-auto">
           <SectionHeader number="03" title="Номинации" />
 
-          <h3 className="font-oswald text-xs tracking-widest mt-12 mb-5" style={{ color: "var(--red)" }}>
+          <h3 className="font-oswald text-xs tracking-widest mt-12 mb-3" style={{ color: "var(--red)" }}>
             SHOW-КАТЕГОРИИ
           </h3>
+          <div className="mb-5 px-4 py-3 flex flex-wrap gap-4 text-xs" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            {["Команда от 3 человек", "Длительность 3–4 минуты", "Реквизит по согласованию с организаторами"].map((t) => (
+              <span key={t} className="flex items-center gap-1.5" style={{ color: "var(--gray)" }}>
+                <span style={{ color: "var(--red)" }}>—</span> {t}
+              </span>
+            ))}
+          </div>
           <div className="grid md:grid-cols-2 gap-4">
             {SHOW_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
+          </div>
+
+          <h3 className="font-oswald text-xs tracking-widest mt-10 mb-5" style={{ color: "var(--red)" }}>
+            DUET-КАТЕГОРИЯ
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {DUET_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
           </div>
 
           <h3 className="font-oswald text-xs tracking-widest mt-10 mb-5" style={{ color: "var(--red)" }}>
@@ -593,7 +603,7 @@ function SectionHeader({ number, title }: { number: string; title: string }) {
   );
 }
 
-function NomCard({ nom }: { nom: { id: string; tag: string; title: string; level: string; levelColor: string; desc: string; price: number; limit?: string } }) {
+function NomCard({ nom }: { nom: { id: string; tag: string; title: string; level: string; levelColor: string; desc: string; limit?: string } }) {
   return (
     <div className="card-hover p-5" style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
       <div className="flex items-start justify-between mb-3">
@@ -607,11 +617,6 @@ function NomCard({ nom }: { nom: { id: string; tag: string; title: string; level
           {nom.limit}
         </div>
       )}
-      <div className="mt-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <span className="font-oswald font-bold text-xl" style={{ color: "var(--red)" }}>
-          {nom.price.toLocaleString("ru-RU")} ₽
-        </span>
-      </div>
     </div>
   );
 }
