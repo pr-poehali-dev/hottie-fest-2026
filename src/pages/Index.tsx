@@ -272,7 +272,7 @@ export default function Index() {
               <p className="text-sm leading-relaxed" style={{ color: "var(--gray)" }}>Мастер-классы по хореографии</p>
               <div className="mt-6 flex items-center gap-2" style={{ color: "rgba(255,255,255,0.3)" }}>
                 <Icon name="MapPin" size={14} fallback="Star" />
-                <span className="text-xs tracking-wide">РК BABYLON · ул. Профсоюзов, 55</span>
+                <span className="text-xs tracking-wide">Fitness Plaza · ул. Университетская, 25а</span>
               </div>
             </div>
             <div className="p-8" style={{ background: "var(--black-card)", border: "1px solid rgba(232,21,27,0.25)" }}>
