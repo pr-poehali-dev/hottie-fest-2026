@@ -10,6 +10,7 @@ const SECTIONS = [
   { id: "important", label: "Важно" },
   { id: "fees", label: "Взносы" },
   { id: "contacts", label: "Контакты" },
+  // registration hidden
 ];
 
 const SHOW_NOMINATIONS = [
@@ -239,8 +240,8 @@ export default function Index() {
             className="font-oswald font-black mb-4"
             style={{ fontSize: "clamp(52px, 12vw, 130px)", lineHeight: 0.9, letterSpacing: "-0.01em" }}
           >
-            HOTTIE<br />
-            <span style={{ color: "var(--red)" }}>FEST</span>
+            ХОТТИ<br />
+            <span style={{ color: "var(--red)" }}>ФЕСТ 2026</span>
           </h1>
           <p className="font-golos text-base md:text-lg mb-2" style={{ color: "var(--gray)" }}>
             Танцевальный чемпионат
@@ -503,10 +504,8 @@ export default function Index() {
         </div>
       </section>
 
-      <div className="divider-red mx-12 md:mx-24" />
-
       {/* ── REGISTRATION ── */}
-      <section id="registration" className="py-24 px-6 md:px-12 lg:px-24">
+      <section id="registration" className="py-24 px-6 md:px-12 lg:px-24" style={{ display: "none" }}>
         <div className="max-w-3xl mx-auto">
           <SectionHeader number="07" title="Регистрация" />
 
