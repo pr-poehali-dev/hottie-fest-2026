@@ -379,7 +379,7 @@ export default function Index() {
                     <div className="h-full" style={{ width: `${c.weight * 100}%`, background: "var(--red)" }} />
                   </div>
                   <div className="font-oswald text-xs mt-1" style={{ color: "var(--red)" }}>
-                    {Math.round(c.weight * 100)}%
+                    {c.weight.toFixed(2).replace(".", ",")}
                   </div>
                 </div>
               </div>
