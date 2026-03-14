@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const SECTIONS = [
   { id: "home", label: "Главная" },
+  { id: "schedule", label: "Программа" },
   { id: "conditions", label: "Условия" },
   { id: "nominations", label: "Номинации" },
   { id: "criteria", label: "Критерии" },
@@ -260,10 +261,39 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── SCHEDULE ── */}
+      <section id="schedule" className="py-24 px-6 md:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader number="01" title="Программа" />
+          <div className="grid md:grid-cols-2 gap-5 mt-12">
+            <div className="p-8" style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
+              <div className="tag-red mb-5 inline-block">30 мая</div>
+              <h3 className="font-oswald text-2xl font-semibold mb-3 tracking-wide">Мастер-классы</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--gray)" }}>Мастер-классы по хореографии</p>
+              <div className="mt-6 flex items-center gap-2" style={{ color: "rgba(255,255,255,0.3)" }}>
+                <Icon name="MapPin" size={14} fallback="Star" />
+                <span className="text-xs tracking-wide">РК BABYLON · ул. Профсоюзов, 55</span>
+              </div>
+            </div>
+            <div className="p-8" style={{ background: "var(--black-card)", border: "1px solid rgba(232,21,27,0.25)" }}>
+              <div className="tag-red mb-5 inline-block">31 мая · 17:00</div>
+              <h3 className="font-oswald text-2xl font-semibold mb-3 tracking-wide">Чемпионат</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--gray)" }}>Главное танцевальное событие весны. Все номинации, финалы, награждение.</p>
+              <div className="mt-6 flex items-center gap-2" style={{ color: "rgba(255,255,255,0.3)" }}>
+                <Icon name="MapPin" size={14} fallback="Star" />
+                <span className="text-xs tracking-wide">РК BABYLON · ул. Профсоюзов, 55</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-red mx-12 md:mx-24" />
+
       {/* ── CONDITIONS ── */}
       <section id="conditions" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="01" title="Условия участия" />
+          <SectionHeader number="02" title="Условия участия" />
           <div className="grid md:grid-cols-2 gap-5 mt-12">
             {[
               { icon: "ShieldCheck", title: "Свободный выбор номинации", text: "Руководитель самостоятельно выбирает номинацию в соответствии с уровнем и опытом команды. Организаторы имеют право перенести команду в другую номинацию при несоответствии требованиям." },
@@ -283,22 +313,7 @@ export default function Index() {
             ))}
           </div>
 
-          <div
-            className="mt-8 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4"
-            style={{ background: "rgba(232,21,27,0.06)", border: "1px solid rgba(232,21,27,0.2)" }}
-          >
-            <div className="flex items-center gap-3">
-              <Icon name="Calendar" size={22} style={{ color: "var(--red)" }} />
-              <div>
-                <div className="font-oswald text-sm tracking-widest" style={{ color: "var(--gray)" }}>ПРОГРАММА</div>
-                <div className="font-oswald font-semibold text-lg">31 мая — Чемпионат</div>
-              </div>
-            </div>
-            <div className="sm:ml-auto flex items-center gap-2" style={{ color: "var(--gray)" }}>
-              <Icon name="MapPin" size={16} />
-              <span className="text-sm">РК BABYLON, ул. Профсоюзов, 55</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -307,7 +322,7 @@ export default function Index() {
       {/* ── NOMINATIONS ── */}
       <section id="nominations" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="02" title="Номинации" />
+          <SectionHeader number="03" title="Номинации" />
 
           <h3 className="font-oswald text-xs tracking-widest mt-12 mb-5" style={{ color: "var(--red)" }}>
             SHOW-КАТЕГОРИИ
@@ -330,7 +345,7 @@ export default function Index() {
       {/* ── CRITERIA ── */}
       <section id="criteria" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="03" title="Критерии оценки" />
+          <SectionHeader number="04" title="Критерии оценки" />
           <div className="grid md:grid-cols-2 gap-4 mt-12">
             {[
               { n: "01", title: "Техника / синхрон", weight: 0.35 },
@@ -366,7 +381,7 @@ export default function Index() {
       {/* ── IMPORTANT ── */}
       <section id="important" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="04" title="Важно" />
+          <SectionHeader number="05" title="Важно" />
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {[
               { icon: "Clock", title: "Регистрация до 17 мая", text: "Команда считается зарегистрированной после 100% оплаты. Инструкция по оплате приходит в течение 48 часов после подачи заявки." },
@@ -395,7 +410,7 @@ export default function Index() {
       {/* ── FEES ── */}
       <section id="fees" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="05" title="Оргвзнос" />
+          <SectionHeader number="06" title="Оргвзнос" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="p-5 border-b" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
@@ -451,7 +466,7 @@ export default function Index() {
       {/* ── REGISTRATION ── */}
       <section id="registration" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
-          <SectionHeader number="06" title="Регистрация" />
+          <SectionHeader number="07" title="Регистрация" />
 
           {submitted ? (
             <div className="mt-12 p-10 text-center" style={{ background: "var(--black-card)", border: "1px solid rgba(232,21,27,0.3)" }}>
@@ -534,7 +549,7 @@ export default function Index() {
       {/* ── CONTACTS ── */}
       <section id="contacts" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader number="07" title="Контакты" />
+          <SectionHeader number="08" title="Контакты" />
           <div className="mt-12 grid sm:grid-cols-3 gap-5">
             {[
               { icon: "Phone", label: "Телефон", value: "+7-922-488-38-96", sub: "Юлия", href: "tel:+79224883896" },
