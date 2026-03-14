@@ -591,9 +591,10 @@ export default function Index() {
       <section id="contacts" className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <SectionHeader number="08" title="Контакты" />
-          <div className="mt-12 grid sm:grid-cols-3 gap-5">
+          <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { icon: "Phone", label: "Телефон", value: "+7-922-488-38-96", sub: "Юлия", href: "tel:+79224883896" },
+              { icon: "Send", label: "Telegram", value: "@yuliabooka", sub: "Юлия", href: "https://t.me/yuliabooka" },
               { icon: "Mail", label: "Почта", value: "hottiefest@mail.ru", sub: "Музыка и вопросы", href: "mailto:hottiefest@mail.ru" },
               { icon: "MapPin", label: "Место проведения", value: "РК BABYLON", sub: "ул. Профсоюзов, 55, Сургут", href: "#" },
             ].map((c, i) => (
