@@ -211,17 +211,21 @@ export default function Index() {
         id="home"
         className="hero-grid relative flex flex-col items-center justify-center text-center min-h-screen px-6"
       >
-        <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
-          aria-hidden
-        >
+        {/* Poster image — right side, fades into dark */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden>
+          <img
+            src="https://cdn.poehali.dev/projects/d421202f-a1e7-45bf-a0c9-e19298c58457/bucket/0ecbfa43-b050-4737-b275-17d9c2cb1ee9.png"
+            alt="Hottie Fest 2026 poster"
+            className="absolute right-0 top-0 h-full w-auto max-w-none object-cover object-right"
+            style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)", WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)" }}
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, var(--black) 30%, transparent 70%)" }} />
+        </div>
+
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden>
           <span
             className="font-oswald font-black"
-            style={{
-              fontSize: "clamp(120px, 30vw, 360px)",
-              color: "rgba(232,21,27,0.04)",
-              letterSpacing: "-0.02em",
-            }}
+            style={{ fontSize: "clamp(120px, 30vw, 360px)", color: "rgba(232,21,27,0.04)", letterSpacing: "-0.02em" }}
           >
             2026
           </span>
