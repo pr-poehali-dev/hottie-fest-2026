@@ -245,7 +245,7 @@ export default function Index() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               className="btn-red px-10 py-3 text-sm font-semibold tracking-widest"
-              onClick={() => scrollTo("registration")}
+              onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd15tsg4PDLzwmAMELevZQkFgS-tGo3NgHutRNOt50_PwM4tA/viewform?usp=dialog", "_blank")}
             >
               Зарегистрироваться
             </button>
