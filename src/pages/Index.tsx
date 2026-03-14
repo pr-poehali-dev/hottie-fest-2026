@@ -505,6 +505,16 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── PRIZE FUND ── */}
+      <section className="py-16 px-6 md:px-12 lg:px-24 text-center">
+        <h2 className="font-oswald text-4xl md:text-6xl font-bold tracking-widest uppercase" style={{ color: "var(--red)" }}>
+          Призовой фонд
+        </h2>
+        <p className="font-oswald text-5xl md:text-7xl font-bold tracking-widest mt-2" style={{ color: "var(--white)" }}>
+          215 000 ₽
+        </p>
+      </section>
+
       {/* ── REGISTRATION ── */}
       <section id="registration" className="py-24 px-6 md:px-12 lg:px-24" style={{ display: "none" }}>
         <div className="max-w-3xl mx-auto">
