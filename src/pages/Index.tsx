@@ -608,6 +608,15 @@ export default function Index() {
               </a>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <button
+              className="btn-red px-16 py-4 text-base font-semibold tracking-widest"
+              onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd15tsg4PDLzwmAMELevZQkFgS-tGo3NgHutRNOt50_PwM4tA/viewform?usp=dialog", "_blank")}
+            >
+              Зарегистрироваться
+            </button>
+          </div>
         </div>
       </section>
 
