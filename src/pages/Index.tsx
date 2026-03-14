@@ -77,7 +77,26 @@ const SOLO_NOMINATIONS = [
   },
 ];
 
-const ALL_NOM_IDS = [...SHOW_NOMINATIONS, ...DUET_NOMINATIONS, ...SOLO_NOMINATIONS].map((n) => n.id);
+const BATTLE_NOMINATIONS = [
+  {
+    id: "battle-ladies",
+    tag: "BATTLE",
+    title: "Battle Ladies",
+    level: "На каблуках",
+    levelColor: "#e8151b",
+    desc: "Баттл на каблуках: стрипы / хилсы.",
+  },
+  {
+    id: "battle-all",
+    tag: "BATTLE",
+    title: "Battle",
+    level: "All styles",
+    levelColor: "#888",
+    desc: "Баттл любых стилей, кроссы.",
+  },
+];
+
+const ALL_NOM_IDS = [...SHOW_NOMINATIONS, ...DUET_NOMINATIONS, ...BATTLE_NOMINATIONS, ...SOLO_NOMINATIONS].map((n) => n.id);
 const SOLO_IDS = SOLO_NOMINATIONS.map((n) => n.id);
 
 function calcFee(selected: string[]): number {
@@ -338,6 +357,13 @@ export default function Index() {
             {DUET_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
           </div>
 
+          <h3 className="font-oswald text-xs tracking-widest mt-10 mb-5" style={{ color: "var(--red)" }}>
+            BATTLE-КАТЕГОРИИ
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {BATTLE_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
+          </div>
+
           <h3 className="font-oswald text-xs tracking-widest mt-10 mb-3" style={{ color: "var(--red)" }}>
             SOLO-КАТЕГОРИИ
           </h3>
@@ -426,7 +452,7 @@ export default function Index() {
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div style={{ background: "var(--black-card)", border: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="p-5 border-b" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-                <span className="tag-red text-xs">SHOW / DUET</span>
+                <span className="tag-red text-xs">SHOW / DUET / BATTLE</span>
               </div>
               {[
                 ["1 номинация", "1 500 ₽"],
