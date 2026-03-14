@@ -57,8 +57,7 @@ const SOLO_NOMINATIONS = [
     title: "Best Solo PRO",
     level: "Продвинутый",
     levelColor: "#e8151b",
-    desc: "Номинация для сольных исполнителей продвинутого уровня. Лимит — 20 участников.",
-    limit: "Лимит: 20 участников",
+    desc: "Номинация для сольных исполнителей продвинутого уровня.",
   },
   {
     id: "solo-beg",
@@ -66,8 +65,7 @@ const SOLO_NOMINATIONS = [
     title: "Best Solo BEGINNER",
     level: "Начинающий",
     levelColor: "#888",
-    desc: "Номинация для сольных исполнителей категории начинающие. Исключает участие действующих педагогов, а также танцоров продвинутого уровня. Лимит — 20 участников.",
-    limit: "Лимит: 20 участников",
+    desc: "Номинация для сольных исполнителей категории начинающие. Исключает участие действующих педагогов, а также танцоров продвинутого уровня.",
   },
   {
     id: "solo-men",
@@ -75,8 +73,7 @@ const SOLO_NOMINATIONS = [
     title: "Best Solo MEN",
     level: "Мужчины",
     levelColor: "#888",
-    desc: "Номинация для сольных исполнителей мужского пола. Лимит — 20 участников.",
-    limit: "Лимит: 20 участников",
+    desc: "Номинация для сольных исполнителей мужского пола.",
   },
 ];
 
@@ -341,9 +338,14 @@ export default function Index() {
             {DUET_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
           </div>
 
-          <h3 className="font-oswald text-xs tracking-widest mt-10 mb-5" style={{ color: "var(--red)" }}>
+          <h3 className="font-oswald text-xs tracking-widest mt-10 mb-3" style={{ color: "var(--red)" }}>
             SOLO-КАТЕГОРИИ
           </h3>
+          <div className="mb-5 px-4 py-3 flex flex-wrap gap-4 text-xs" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            <span className="flex items-center gap-1.5" style={{ color: "var(--gray)" }}>
+              <span style={{ color: "var(--red)" }}>—</span> Лимит 20 участников в каждой номинации
+            </span>
+          </div>
           <div className="grid md:grid-cols-3 gap-4">
             {SOLO_NOMINATIONS.map((nom) => <NomCard key={nom.id} nom={nom} />)}
           </div>
