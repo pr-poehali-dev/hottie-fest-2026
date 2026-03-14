@@ -488,12 +488,16 @@ export default function Index() {
                   <span className="font-oswald font-semibold text-base">{price}</span>
                 </div>
               ))}
-              <div className="mx-5 mb-5 mt-3 p-3 flex gap-3" style={{ background: "rgba(232,21,27,0.08)", border: "1px solid rgba(232,21,27,0.2)" }}>
-                <Icon name="AlertCircle" size={16} style={{ color: "var(--red)", flexShrink: 0, marginTop: "2px" }} />
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  После 10 мая стоимость повышается на 300 ₽ к каждой номинации
-                </p>
-              </div>
+            </div>
+          </div>
+          <div className="mt-5 flex flex-col sm:flex-row gap-3">
+            <div className="flex-1 px-4 py-3 flex items-center gap-3" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+              <Icon name="User" size={15} style={{ color: "var(--red)", flexShrink: 0 }} />
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>Стоимость указана за одного участника</p>
+            </div>
+            <div className="flex-1 px-4 py-3 flex items-center gap-3" style={{ background: "rgba(232,21,27,0.06)", border: "1px solid rgba(232,21,27,0.2)" }}>
+              <Icon name="AlertCircle" size={15} style={{ color: "var(--red)", flexShrink: 0 }} />
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>После 10 мая стоимость повышается на 300 ₽ к каждой номинации</p>
             </div>
           </div>
         </div>
